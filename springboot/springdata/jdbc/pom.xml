@@ -9,6 +9,10 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <modules>
+        <module>basics</module>
+    </modules>
+
     <packaging>pom</packaging>
     <artifactId>spring-data-jdbc-examples</artifactId>
     <name>Spring Data JDBC - Examples</name>

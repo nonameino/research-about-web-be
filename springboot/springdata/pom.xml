@@ -19,7 +19,6 @@
 
 	<modules>
 		<module>jdbc</module>
-		<module>basics</module>
 	</modules>
 
 	<properties>
