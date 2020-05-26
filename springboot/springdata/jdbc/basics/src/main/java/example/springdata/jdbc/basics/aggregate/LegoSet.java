@@ -25,8 +25,36 @@ public class LegoSet {
     @Transient
     private Period maximumAge;
 
-    @Column("HUNDBUCH_ID")
+    @Column("HANDBUCH_ID")
     private Manual manual;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Period getMinimumAge() {
+        return minimumAge;
+    }
+
+    public void setMinimumAge(Period minimumAge) {
+        this.minimumAge = minimumAge;
+    }
+
+    public Period getMaximumAge() {
+        return maximumAge;
+    }
+
+    public void setMaximumAge(Period maximumAge) {
+        this.maximumAge = maximumAge;
+    }
+
+    public Map<String, Model> getModels() {
+        return models;
+    }
 
     public int getId() {
         return id;

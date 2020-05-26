@@ -3,6 +3,7 @@ package example.springdata.jdbc.basics.aggregate;
 public class ModelReport {
     protected String modelName;
     protected String description;
+    protected String setName;
 
     public ModelReport() {
     }
@@ -26,5 +27,13 @@ public class ModelReport {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getSetName() {
+        return setName;
+    }
+
+    public void setSetName(String setName) {
+        this.setName = setName;
     }
 }
