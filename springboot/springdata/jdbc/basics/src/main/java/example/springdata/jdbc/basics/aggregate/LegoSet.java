@@ -28,6 +28,18 @@ public class LegoSet {
     @Column("HANDBUCH_ID")
     private Manual manual;
 
+	@MappedCollection(keyColumn = "NAME")
+    @AccessType(AccessType.Type.FIELD)
+    private Map<String, Model> models;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getName() {
         return name;
     }
@@ -52,18 +64,6 @@ public class LegoSet {
         this.maximumAge = maximumAge;
     }
 
-    public Map<String, Model> getModels() {
-        return models;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public Manual getManual() {
         return manual;
     }
@@ -72,9 +72,13 @@ public class LegoSet {
         this.manual = manual;
     }
 
-    @MappedCollection(keyColumn = "Name")
-    @AccessType(AccessType.Type.FIELD)
-    private final Map<String, Model> models;
+    public Map<String, Model> getModels() {
+        return models;
+    }
+
+    public void setModels(Map<String, Model> models) {
+        this.models = models;
+    }
 
     public LegoSet() {
         this.models = new HashMap<>();
@@ -90,11 +94,11 @@ public class LegoSet {
     }
 
     @Column("MAX_AGE")
-    public int getIntMaxMaximumAge() {
+    public int getIntMaximumAge() {
         return toInt(maximumAge);
     }
 
-    public void setMaximumAge(int years) {
+	public void setIntMaximumAge(int years) {
         this.maximumAge = toPeriod(years);
     }
 
