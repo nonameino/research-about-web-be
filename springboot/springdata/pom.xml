@@ -19,6 +19,7 @@
 
 	<modules>
 		<module>jdbc</module>
+		<module>jpa</module>
 	</modules>
 
 	<properties>
@@ -26,7 +27,133 @@
 		<jvm.enable-preview></jvm.enable-preview>
 	</properties>
 
-	<profiles></profiles>
+	<profiles>
+		<profile>
+			<id>spring-data-next-releasetrain</id>
+			<properties>
+				<spring-data-releasetrain.version>Neumann-BUILD-SNAPSHOT</spring-data-releasetrain.version>
+			</properties>
+		</profile>
+		<profile>
+			<id>spring-data-next</id>
+			<properties>
+				<spring-data-releasetrain.version>Neumann-BUILD-SNAPSHOT</spring-data-releasetrain.version>
+			</properties>
+		</profile>
+		<profile>
+			<id>java8</id>
+			<activation>
+				<jdk>1.8</jdk>
+			</activation>
+			<modules>
+				<!-- Embedded Cassandra (cassandra-all) is not compatible with Java runtime  and higher.
+				See https://issues.apache.org/jira/browser/CASSANDRA-9608 -->
+				<module>cassandra</module>
+			</modules>
+		</profile>
+		<profile>
+			<id>java11</id>
+			<activation>
+				<jdk>11</jdk>
+			</activation>
+		</profile>
+		<profile>
+			<id>java-next</id>
+			<activation>
+				<jdk>[9,)</jdk>
+			</activation>
+			<dependencies>
+				<dependency>
+					<groupId>javax.xml.bind</groupId>
+					<artifactId>jaxb-api</artifactId>
+				</dependency>
+				<dependency>
+					<groupId>javax.annotation</groupId>
+					<artifactId>javax.annotation-api</artifactId>
+				</dependency>
+			</dependencies>
+		</profile>
+		<profile>
+			<id>java-13+</id>
+			<activation>
+				<jdk>[13,)</jdk>
+			</activation>
+			<properties>
+				<jvm.enable-preview>--enable-preview</jvm.enable-preview>
+			</properties>
+			<build>
+				<plugins>
+					<plugin>
+						<artifactId>maven-compiler-plugin</artifactId>
+						<configuration>
+							<release>13</release>
+							<compilerArgs>${jvm.enable-preview}</compilerArgs>
+						</configuration>
+					</plugin>
+					<plugin>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<configuration>
+							<argLine>${jvm.enable-preview}</argLine>
+						</configuration>
+					</plugin>
+					<plugin>
+						<artifactId>maven-failsafe-plugin</artifactId>
+						<configuration>
+							<argLine>${jvm.enable-preview}</argLine>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>java-13</id>
+			<activation>
+				<jdk>13</jdk>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<artifactId>maven-compiler-plugin</artifactId>
+						<configuration>
+							<release>13</release>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>java-14</id>
+			<activation>
+				<jdk>14</jdk>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<artifactId>maven-compiler-plugin</artifactId>
+						<configuration>
+							<release>14</release>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>java-15</id>
+			<activation>
+				<jdk>15</jdk>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<artifactId>maven-compiler-plugin</artifactId>
+						<configuration>
+							<release>15</release>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 
 	<dependencies>
 		<dependency>

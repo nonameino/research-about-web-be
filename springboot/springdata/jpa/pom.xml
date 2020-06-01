@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>spring-data-example</artifactId>
+        <groupId>org.springframework.data.example</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>spring-data-jpa-examples</artifactId>
+    <packaging>pom</packaging>
+    <name>Spring Data JPA - Examples</name>
+    <description>Simple projects for Spring Data JPA</description>
+    <url>https://projects.spring.io/spring-data-jpa</url>
+
+    <modules>
+        <module>example</module>
+    </modules>
+
+    <profiles>
+        <profile>
+            <id>hibernate-53</id>
+            <properties>
+                <hibernate.version>5.3.0.Final</hibernate.version>
+            </properties>
+        </profile>
+        <profile>
+            <id>hava-next</id>
+            <activation>
+                <jdk>[8,14]</jdk>
+            </activation>
+            <modules>
+                <module>eclipselink</module>
+            </modules>
+        </profile>
+    </profiles>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.hsqldb</groupId>
+            <artifactId>hsqldb</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>
