@@ -14,7 +14,7 @@ import java.time.temporal.ChronoUnit;
 import java.util.HashMap;
 import java.util.Map;
 
-@Data
+//@Data
 @AccessType(AccessType.Type.PROPERTY)
 public class LegoSet {
     @Id

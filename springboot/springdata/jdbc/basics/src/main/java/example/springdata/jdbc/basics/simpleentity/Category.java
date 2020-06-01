@@ -15,6 +15,7 @@ import java.time.LocalDateTime;
 public class Category {
 
     @Id
+    @Wither
     private final Long id;
     private String name;
     private String description;
@@ -29,6 +30,50 @@ public class Category {
         this.description = description;
         this.ageGroup = ageGroup;
         this.created = LocalDateTime.now();
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public LocalDateTime getCreated() {
+        return created;
+    }
+
+    public void setCreated(LocalDateTime created) {
+        this.created = created;
+    }
+
+    public long getInserted() {
+        return inserted;
+    }
+
+    public void setInserted(long inserted) {
+        this.inserted = inserted;
+    }
+
+    public AgeGroup getAgeGroup() {
+        return ageGroup;
+    }
+
+    public void setAgeGroup(AgeGroup ageGroup) {
+        this.ageGroup = ageGroup;
     }
 
     public void timeStamp() {
