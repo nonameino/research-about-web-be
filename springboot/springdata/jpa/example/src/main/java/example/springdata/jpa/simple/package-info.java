@@ -1,0 +1,1 @@
+package example.springdata.jpa.simple;
