@@ -15,7 +15,6 @@ import java.time.LocalDateTime;
 public class Category {
 
     @Id
-    @Wither
     private final Long id;
     private String name;
     private String description;

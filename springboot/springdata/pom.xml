@@ -40,17 +40,17 @@
 				<spring-data-releasetrain.version>Neumann-BUILD-SNAPSHOT</spring-data-releasetrain.version>
 			</properties>
 		</profile>
-		<profile>
-			<id>java8</id>
-			<activation>
-				<jdk>1.8</jdk>
-			</activation>
-			<modules>
-				<!-- Embedded Cassandra (cassandra-all) is not compatible with Java runtime  and higher.
-				See https://issues.apache.org/jira/browser/CASSANDRA-9608 -->
-				<module>cassandra</module>
-			</modules>
-		</profile>
+<!--		<profile>-->
+<!--			<id>java8</id>-->
+<!--			<activation>-->
+<!--				<jdk>1.8</jdk>-->
+<!--			</activation>-->
+<!--			<modules>-->
+<!--				&lt;!&ndash; Embedded Cassandra (cassandra-all) is not compatible with Java runtime  and higher.-->
+<!--				See https://issues.apache.org/jira/browser/CASSANDRA-9608 &ndash;&gt;-->
+<!--				<module>cassandra</module>-->
+<!--			</modules>-->
+<!--		</profile>-->
 		<profile>
 			<id>java11</id>
 			<activation>
@@ -172,12 +172,12 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-	<repositories>
-		<repository>
-			<id>spring-libs-snapshot</id>
-			<url>https://repo.spring.io/libs-snapshot</url>
-		</repository>
-	</repositories>
+<!--	<repositories>-->
+<!--		<repository>-->
+<!--			<id>spring-libs-snapshot</id>-->
+<!--			<url>https://repo.spring.io/libs-snapshot</url>-->
+<!--		</repository>-->
+<!--	</repositories>-->
 
 	<pluginRepositories>
 		<pluginRepository>

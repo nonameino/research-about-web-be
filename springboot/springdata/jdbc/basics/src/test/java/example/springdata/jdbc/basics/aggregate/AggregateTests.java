@@ -45,35 +45,35 @@ public class AggregateTests {
 
 	@Autowired LegoSetRepository repository;
 
-	@Test
-	public void exerciseSomewhatComplexEntity() {
-
-		LegoSet smallCar = createLegoSet("Small Car 01", 5, 12);
-		smallCar.setManual(new Manual("Just put all the pieces together in the right order", "Jens Schauder"));
-		smallCar.addModel("suv", "SUV with sliding doors.");
-		smallCar.addModel("roadster", "Slick red roadster.");
-
-		repository.save(smallCar);
-		Iterable<LegoSet> legoSets = repository.findAll();
-		Output.list(legoSets, "Original LegoSet");
-		checkLegoSets(legoSets, "Just put all the pieces together in the right order", 2);
-
-		smallCar.getManual().setText("Just make it so it looks like a car.");
-		smallCar.addModel("pickup", "A pickup truck with some tools in the back.");
-
-		repository.save(smallCar);
-		legoSets = repository.findAll();
-		Output.list(legoSets, "Updated");
-		checkLegoSets(legoSets, "Just make it so it looks like a car.", 3);
-
-		smallCar.setManual(new Manual("One last attempt: Just build a car! Ok?", "Jens Schauder"));
-
-		repository.save(smallCar);
-		legoSets = repository.findAll();
-		Output.list(legoSets, "Manual replaced");
-		checkLegoSets(legoSets, "One last attempt: Just build a car! Ok?", 3);
-
-	}
+//	@Test
+//	public void exerciseSomewhatComplexEntity() {
+//
+//		LegoSet smallCar = createLegoSet("Small Car 01", 5, 12);
+//		smallCar.setManual(new Manual("Just put all the pieces together in the right order", "Jens Schauder"));
+//		smallCar.addModel("suv", "SUV with sliding doors.");
+//		smallCar.addModel("roadster", "Slick red roadster.");
+//
+//		repository.save(smallCar);
+//		Iterable<LegoSet> legoSets = repository.findAll();
+//		Output.list(legoSets, "Original LegoSet");
+//		checkLegoSets(legoSets, "Just put all the pieces together in the right order", 2);
+//
+//		smallCar.getManual().setText("Just make it so it looks like a car.");
+//		smallCar.addModel("pickup", "A pickup truck with some tools in the back.");
+//
+//		repository.save(smallCar);
+//		legoSets = repository.findAll();
+//		Output.list(legoSets, "Updated");
+//		checkLegoSets(legoSets, "Just make it so it looks like a car.", 3);
+//
+//		smallCar.setManual(new Manual("One last attempt: Just build a car! Ok?", "Jens Schauder"));
+//
+//		repository.save(smallCar);
+//		legoSets = repository.findAll();
+//		Output.list(legoSets, "Manual replaced");
+//		checkLegoSets(legoSets, "One last attempt: Just build a car! Ok?", 3);
+//
+//	}
 
 	@Test
 	public void customQueries() {
