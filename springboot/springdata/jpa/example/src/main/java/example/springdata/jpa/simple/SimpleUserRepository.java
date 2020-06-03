@@ -22,5 +22,5 @@ public interface SimpleUserRepository extends CrudRepository<User, Long> {
     List<User> findFirst2ByOrderByLastnameAsc();
     List<User> findTop2By(Sort sort);
     @Query("select u from User u where u.firstname = :#{#user.firstname} or u.lastname = :#{#user.lastname}")
-    Iterable<User> findFirstnameOrLastname(User user);
+    Iterable<User> findByFirstnameOrLastname(User user);
 }
