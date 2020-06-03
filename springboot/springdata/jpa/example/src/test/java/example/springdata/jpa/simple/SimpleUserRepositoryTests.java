@@ -116,7 +116,7 @@ public class SimpleUserRepositoryTests {
 
         repository.saveAll(source);
 
-        Slice<User> users = repository.findByLastnameOrderByUsernameAsc(this.user.getLastname(), PageRequest.of(0, 5));
+        Slice<User> users = repository.findByLastnameOrderByUsernameAsc(this.user.getLastname(), PageRequest.of(1, 5));
 
         assertThat(users).containsAll(source.subList(5, 10));
     }
