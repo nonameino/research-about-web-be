@@ -17,6 +17,7 @@
 
     <modules>
         <module>example</module>
+        <module>java8</module>
     </modules>
 
     <profiles>
