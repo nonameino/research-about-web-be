@@ -18,6 +18,8 @@
     <modules>
         <module>example</module>
         <module>java8</module>
+        <module>interceptors</module>
+        <module>query-by-example</module>
     </modules>
 
     <profiles>
