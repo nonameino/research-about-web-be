@@ -3,29 +3,23 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>spring-data-examples</artifactId>
+        <artifactId>spring-data-jpa-examples</artifactId>
         <groupId>org.springframework.data.examples</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <modules>
-        <module>basics</module>
-    </modules>
-
-    <packaging>pom</packaging>
-    <artifactId>spring-data-jdbc-examples</artifactId>
-    <name>Spring Data JDBC - Examples</name>
-    <inceptionYear>2020</inceptionYear>
+    <artifactId>spring-data-jpa-security</artifactId>
+    <name>Spring Data JPA - Spring security integration</name>
 
     <dependencies>
         <dependency>
-            <groupId>org.springframework.data</groupId>
-            <artifactId>spring-data-jdbc</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.hsqldb</groupId>
-            <artifactId>hsqldb</artifactId>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-data</artifactId>
         </dependency>
     </dependencies>
 
