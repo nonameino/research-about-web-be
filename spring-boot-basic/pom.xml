@@ -10,9 +10,10 @@
     <modules>
         <module>lombok</module>
         <module>properties-files</module>
+        <module>data-rest</module>
     </modules>
     <packaging>pom</packaging>
-    <name>Spring Boot Basic Root</name>
+    <name>Spring Boot - Basic Root</name>
 
     <parent>
         <artifactId>spring-boot-starter-parent</artifactId>
