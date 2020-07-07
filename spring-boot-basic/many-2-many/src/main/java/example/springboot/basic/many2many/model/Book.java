@@ -13,10 +13,11 @@ public class Book {
 
     private String description;
 
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "book_authors",
-            joinColumns = @JoinColumn(name="book_id", referencedColumnName = "id"),
-            inverseJoinColumns =@JoinColumn(name = "author_id", referencedColumnName = "id"))
+    @ManyToMany(mappedBy = "books")
+//    @ManyToMany(cascade = CascadeType.ALL)
+//    @JoinTable(name = "book_authors",
+//            joinColumns = @JoinColumn(name="book_id", referencedColumnName = "id"),
+//            inverseJoinColumns =@JoinColumn(name = "author_id", referencedColumnName = "id"))
     Set<Author> authors;
 
     public Book() {
