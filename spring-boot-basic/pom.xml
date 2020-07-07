@@ -13,6 +13,7 @@
         <module>data-rest</module>
         <module>component-scan</module>
         <module>one-2-many</module>
+        <module>many-2-many</module>
     </modules>
     <packaging>pom</packaging>
     <name>Spring Boot - Basic Root</name>
