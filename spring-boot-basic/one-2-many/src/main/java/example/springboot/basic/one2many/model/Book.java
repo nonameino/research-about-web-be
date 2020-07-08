@@ -1,6 +1,7 @@
 package example.springboot.basic.one2many.model;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 public class Book {
@@ -11,6 +12,9 @@ public class Book {
     private String title;
 
     private String description;
+
+    @OneToMany(mappedBy = "book")
+    private Set<Page> pages;
 
     @ManyToOne
     @JoinColumn(name = "book_category_id")
@@ -54,5 +58,21 @@ public class Book {
 
     public void setCategory(BookCategory category) {
         this.bookCategory = category;
+    }
+
+    public Set<Page> getPages() {
+        return pages;
+    }
+
+    public void setPages(Set<Page> pages) {
+        this.pages = pages;
+    }
+
+    public BookCategory getBookCategory() {
+        return bookCategory;
+    }
+
+    public void setBookCategory(BookCategory bookCategory) {
+        this.bookCategory = bookCategory;
     }
 }
