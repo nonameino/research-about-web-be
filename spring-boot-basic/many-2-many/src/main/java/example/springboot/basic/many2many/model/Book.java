@@ -20,6 +20,9 @@ public class Book {
 //            inverseJoinColumns =@JoinColumn(name = "author_id", referencedColumnName = "id"))
     Set<Author> authors;
 
+    @OneToMany(mappedBy = "book")
+    private Set<BookPublisher> bookPublishers;
+
     public Book() {
     }
 
@@ -53,5 +56,13 @@ public class Book {
 
     public void setAuthors(Set<Author> authors) {
         this.authors = authors;
+    }
+
+    public Set<BookPublisher> getBookPublishers() {
+        return bookPublishers;
+    }
+
+    public void setBookPublishers(Set<BookPublisher> bookPublishers) {
+        this.bookPublishers = bookPublishers;
     }
 }
