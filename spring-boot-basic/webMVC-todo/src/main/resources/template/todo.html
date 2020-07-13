@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Todo MVC using VueJs, Spring Boot, H2</title>
+    <link href="https://unpkg.com/todomvn-app-css@2.0.6/index.css" rel="stylesheet" />
+    <link href="/todo.css" rel="stylesheet">
+</head>
+<body>
+    <section class="todoapp">
+        <header class="header">
+            <h2>todos</h2>
+            <input class="new-todo"
+                autofocus autocomplete="off"
+            placeholder="What needs to be done?"
+            v-model="newTodo"
+            @keyup.enter="addTodo">
+        </header>
+        <section class="main" v-show="todos.legth" v-cloak>
+
+        </section>
+    </section>
+</body>
+</html>

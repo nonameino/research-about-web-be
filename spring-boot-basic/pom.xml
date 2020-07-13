@@ -15,6 +15,7 @@
         <module>one-2-many</module>
         <module>many-2-many</module>
         <module>mapstruct</module>
+        <module>webMVC-todo</module>
     </modules>
     <packaging>pom</packaging>
     <name>Spring Boot - Basic Root</name>
