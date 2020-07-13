@@ -17,6 +17,7 @@
         <module>mapstruct</module>
         <module>webMVC-todo</module>
         <module>hibernate-validation</module>
+        <module>rest-api-hibernate-validation</module>
     </modules>
     <packaging>pom</packaging>
     <name>Spring Boot - Basic Root</name>
